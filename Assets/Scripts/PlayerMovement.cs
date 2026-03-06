@@ -19,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        grounded = IsGrounded(collision);
+        if (Input.GetKeyDown(KeyCode.Space)) return;
+
+        grounded = IsGrounded(collision, rb.linearVelocityY);
         if (grounded) print("touching ground");
         else print("not touching ground");
     }
@@ -72,11 +74,11 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX, -maxSpeed, maxSpeed);
     }
 
-    bool IsGrounded(Collision2D collision)
+    bool IsGrounded(Collision2D collision, float velocityY)
     {
         for (int i = 0; i < collision.contactCount; i++)
         {
-            if (collision.GetContact(i).normal == groundedAngle) return true;
+            if (collision.GetContact(i).normal == groundedAngle && velocityY >= 0f) return true;
         }
 
         return false;

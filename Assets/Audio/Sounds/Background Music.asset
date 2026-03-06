@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Background Music
   m_EditorClassIdentifier: Assembly-CSharp::Sound
   description: 
-  audioClip: {fileID: 8300000, guid: 8372b95cc63a41a4bad8b01b310fb0a7, type: 3}
+  audioClip: {fileID: 8300000, guid: e3652426d9802bb45ad43b3bd41b6e32, type: 3}
+  volume: 0.3
   pitchRandomRange: 0
   isSpatial: 0

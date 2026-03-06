@@ -18,6 +18,7 @@ public class SoundPlayer : MonoBehaviour
     public void PlaySound(Sound sound)
     {
         source.clip = sound.audioClip;
+        source.volume = sound.volume;
 
         if (sound.isSpatial) source.spatialBlend = 1;
         else source.spatialBlend = 0;

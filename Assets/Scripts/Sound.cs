@@ -5,6 +5,7 @@ public class Sound : ScriptableObject
 {
     public string description;
     public AudioClip audioClip;
+    public float volume;
     public float pitchRandomRange;
     public bool isSpatial = true;
 }
