@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,12 +17,16 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        for (int i = 0; i < collision.contactCount; i++)
-        {
-            grounded = IsGrounded(collision.GetContact(i).normal);
-            if (grounded) break;
-        }
-        
+        grounded = IsGrounded(collision);
+        if (grounded) print("touching ground");
+        else print("not touching ground");
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        grounded = IsGrounded(collision);
+        if (grounded) print("touching ground");
+        else print("not touching ground");
     }
 
     void Update()
@@ -43,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (coyoteTimeCurrent > 0f)
             {
-                grounded = false;
+                coyoteTimeCurrent = 0f;
                 rb.linearVelocityY = jumpHeight;
             }
         }
@@ -63,9 +68,13 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX, -maxSpeed, maxSpeed);
     }
 
-    bool IsGrounded(Vector2 normal)
+    bool IsGrounded(Collision2D collision)
     {
-        if (normal == groundedAngle) return true;
-        else return false;
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            if (collision.GetContact(i).normal == groundedAngle) return true;
+        }
+
+        return false;
     }
 }

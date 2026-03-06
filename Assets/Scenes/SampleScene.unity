@@ -678,6 +678,7 @@ MonoBehaviour:
   deceleration: 100
   maxSpeed: 6
   jumpHeight: 7
+  coyoteTime: 0.2
 --- !u!1 &952853724
 GameObject:
   m_ObjectHideFlags: 0
