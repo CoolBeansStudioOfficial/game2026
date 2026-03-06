@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
+    public Sound jumpSound;
+
     public Vector2 groundedAngle;
     public float acceleration;
     public float deceleration;
@@ -24,9 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        grounded = IsGrounded(collision);
-        if (grounded) print("touching ground");
-        else print("not touching ground");
+        grounded = false;
+        print("not touching ground");
     }
 
     void Update()
@@ -49,7 +50,10 @@ public class PlayerMovement : MonoBehaviour
             if (coyoteTimeCurrent > 0f)
             {
                 coyoteTimeCurrent = 0f;
+                grounded = false;
                 rb.linearVelocityY = jumpHeight;
+
+                AudioManager.Instance.PlaySound(jumpSound);
             }
         }
 
