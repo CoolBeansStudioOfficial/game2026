@@ -676,9 +676,9 @@ MonoBehaviour:
   jumpSound: {fileID: 11400000, guid: 217c635e45069f24bbc503152963b45e, type: 2}
   groundedAngle: {x: 0, y: 1}
   acceleration: 100
-  deceleration: 100
+  deceleration: 10
   maxSpeed: 6
-  jumpHeight: 7
+  jumpHeight: 8
   coyoteTime: 0.2
 --- !u!1 &952853724
 GameObject:
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxSounds: 10
   soundPlayerPrefab: {fileID: 4366048745284981959, guid: 7b1a096826a700645880da6fb3142e4f, type: 3}
-  defaultMusic: {fileID: 0}
+  defaultMusic: {fileID: 11400000, guid: 733d04f51101b224195b5120c087355a, type: 2}
   musicPlayer: {fileID: 1342626488}
 --- !u!4 &1218387662
 Transform:
@@ -875,6 +875,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1218387662}
     m_Modifications:
+    - target: {fileID: 4188143916228621530, guid: 7b1a096826a700645880da6fb3142e4f, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4366048745284981959, guid: 7b1a096826a700645880da6fb3142e4f, type: 3}
       propertyPath: m_Name
       value: Music Player

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sound
   description: hup
   audioClip: {fileID: 8300000, guid: 5e425f44c1915274d88de98be1a4cf7b, type: 3}
-  pitchRandomRange: 1
+  pitchRandomRange: 0.1
   isSpatial: 0
