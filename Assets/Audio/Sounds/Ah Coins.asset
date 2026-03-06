@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dad54980b9f9a6847a28cfe552992729, type: 3}
-  m_Name: Alright
+  m_Name: Ah Coins
   m_EditorClassIdentifier: Assembly-CSharp::Sound
-  description: 
-  audioClip: {fileID: 8300000, guid: 2eb8903774371b94dab83609a313c5f2, type: 3}
-  volume: 0.76
+  description: Ah, coins! Better keep an eye out for these.
+  audioClip: {fileID: 8300000, guid: f4277c09c66bc0b46b0f438cd995ce2a, type: 3}
+  volume: 1
   pitchRandomRange: 0
   isSpatial: 0
