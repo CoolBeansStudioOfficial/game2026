@@ -16,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             //read the dialogue
-            StartCoroutine(DialogueReader.Instance.ReadDialogue(dialogue, stopPlayer));
+            DialogueReader.Instance.ReadDialogue(dialogue, stopPlayer);
 
             //play sound
             if (activationSound != null) AudioManager.Instance.PlaySound(activationSound);

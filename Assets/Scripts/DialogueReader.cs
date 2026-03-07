@@ -25,10 +25,18 @@ public class DialogueReader : MonoBehaviour
     public TMP_Text text;
 
     public float timeBetweenChars;
+    public int charsPerSound;
+    public Sound dialogueSound;
 
     public bool playerLocked = false;
 
-    public IEnumerator ReadDialogue(string dialogue, bool lockPlayer = false)
+    public void ReadDialogue(string dialogue, bool lockPlayer = false)
+    {
+        StopAllCoroutines();
+        StartCoroutine(DisplayDialogue(dialogue, lockPlayer));
+    }
+
+    IEnumerator DisplayDialogue(string dialogue, bool lockPlayer = false)
     {
         panel.SetActive(true);
         playerLocked = lockPlayer;
@@ -40,6 +48,8 @@ public class DialogueReader : MonoBehaviour
         {
             currentChars += chars[i];
             text.SetText(currentChars);
+
+            if (i % charsPerSound == 0) AudioManager.Instance.PlaySound(dialogueSound);
 
             yield return new WaitForSeconds(timeBetweenChars);
 

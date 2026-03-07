@@ -289,10 +289,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1380515655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 225}
+  m_SizeDelta: {x: -250, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287574878
 MonoBehaviour:
@@ -341,8 +341,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -701,8 +701,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 108.3
-  m_fontSizeBase: 108.3
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3050,7 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3119,6 +3119,8 @@ MonoBehaviour:
   panel: {fileID: 1380515654}
   text: {fileID: 287574878}
   timeBetweenChars: 0.05
+  charsPerSound: 2
+  dialogueSound: {fileID: 11400000, guid: aeb9d8355dac7b64d961f0b15d08670e, type: 2}
   playerLocked: 0
 --- !u!1 &1198882913
 GameObject:
@@ -3530,8 +3532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56.749996, y: 0}
-  m_SizeDelta: {x: -113.50001, y: 0}
+  m_AnchoredPosition: {x: -23.35, y: 0}
+  m_SizeDelta: {x: -46.7, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297497012
 MonoBehaviour:
@@ -3571,6 +3573,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297497010}
   m_CullTransparentMesh: 1
+--- !u!1001 &1314649610
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2384115390824454287, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_Size.y
+      value: 5.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058243672585447920, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: dialogue
+      value: Alright, Blocko! Keep going!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058243672585447920, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: oneTimeTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.884495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704865358767495181, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120811414745220380, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
+      propertyPath: m_Name
+      value: Dialogue Trigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
 --- !u!1001 &1342626487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3688,8 +3759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349191742
 MonoBehaviour:
@@ -4040,9 +4111,9 @@ RectTransform:
   m_Father: {fileID: 1132409594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.2790527, y: -371.1775}
-  m_SizeDelta: {x: -80.0065, y: -810.5573}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: -50, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380515656
 MonoBehaviour:
@@ -4790,7 +4861,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6058243672585447920, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
       propertyPath: dialogue
-      value: You're gonna want to turn left right here.
+      value: Hmm....................um............ I'm not fully certain, but I'm
+        pretty sure you need to take a left here.
       objectReference: {fileID: 0}
     - target: {fileID: 6058243672585447920, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
       propertyPath: stopPlayer
@@ -5443,7 +5515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6058243672585447920, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
       propertyPath: dialogue
-      value: This section may look impossible to navigate, but FEAR NOT! I, Blockman,
+      value: This section may look impossible to navigate, but FEAR NOT! I, Boxman,
         will help you through it.
       objectReference: {fileID: 0}
     - target: {fileID: 6058243672585447920, guid: f3634b75a0d983b45809710951fc27e6, type: 3}
@@ -6106,3 +6178,4 @@ SceneRoots:
   - {fileID: 622797839}
   - {fileID: 672877739}
   - {fileID: 1571077471}
+  - {fileID: 1314649610}
