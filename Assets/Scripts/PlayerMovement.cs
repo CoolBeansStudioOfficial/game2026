@@ -21,7 +21,9 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //spawn landing particles
-        if (grounded) ; 
+
+        //play landing sound
+        if (grounded) AudioManager.Instance.PlaySound(jumpSound); 
     }
 
     void Update()
