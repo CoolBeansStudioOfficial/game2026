@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(castPosition, Vector2.down);
 
         if (hit.collider == null) return false;
-        else if (Vector2.Distance(castPosition, hit.point) < 0.01f)
+        else if (Vector2.Distance(castPosition, hit.point) < 0.001f)
         {
             print("touching ground");
             var circle = GameObject.CreatePrimitive(PrimitiveType.Cube);
