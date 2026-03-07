@@ -28,29 +28,38 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = IsGrounded();
 
-        if (Input.GetKey(KeyCode.A))
+        if (!DialogueReader.Instance.playerLocked)
         {
-            rb.linearVelocityX -= acceleration * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            rb.linearVelocityX += acceleration * Time.deltaTime;
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.linearVelocityX -= acceleration * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                rb.linearVelocityX += acceleration * Time.deltaTime;
+            }
+            else
+            {
+                //decelerate
+                rb.linearVelocityX = Mathf.MoveTowards(rb.linearVelocityX, 0, deceleration * Time.deltaTime);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (coyoteTimeCurrent > 0f)
+                {
+                    coyoteTimeCurrent = 0f;
+                    grounded = false;
+                    rb.linearVelocityY = jumpHeight;
+
+                    AudioManager.Instance.PlaySound(jumpSound);
+                }
+            }
         }
         else
         {
+            //decelerate
             rb.linearVelocityX = Mathf.MoveTowards(rb.linearVelocityX, 0, deceleration * Time.deltaTime);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (coyoteTimeCurrent > 0f)
-            {
-                coyoteTimeCurrent = 0f;
-                grounded = false;
-                rb.linearVelocityY = jumpHeight;
-
-                AudioManager.Instance.PlaySound(jumpSound);
-            }
         }
 
         //coyote time countdown
@@ -78,10 +87,6 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider == null) return false;
         else if (Vector2.Distance(castPosition, hit.point) < 0.001f)
         {
-            print("touching ground");
-            var circle = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            circle.transform.position = hit.point;
-            circle.transform.localScale = new(0.1f, 0.1f, 0.1f);
             return true;
         }
 

@@ -26,9 +26,12 @@ public class DialogueReader : MonoBehaviour
 
     public float timeBetweenChars;
 
-    public IEnumerator ReadDialogue(string dialogue)
+    public bool playerLocked = false;
+
+    public IEnumerator ReadDialogue(string dialogue, bool lockPlayer = false)
     {
         panel.SetActive(true);
+        playerLocked = lockPlayer;
 
         var chars = dialogue.ToCharArray();
 
@@ -51,6 +54,7 @@ public class DialogueReader : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         panel.SetActive(false);
+        playerLocked = false;
 
     }
 
