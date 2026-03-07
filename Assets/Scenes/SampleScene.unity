@@ -501,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120811414745220380, guid: 167f5acfd59ad95489f3b2510fb445d4, type: 3}
       propertyPath: m_Name
-      value: Trigger
+      value: Progression Ensurance Device
       objectReference: {fileID: 0}
     - target: {fileID: 7758531683264555129, guid: 167f5acfd59ad95489f3b2510fb445d4, type: 3}
       propertyPath: toActivate
@@ -1828,11 +1828,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7997144200881355076, guid: e46fa8a4379aa1c469a60671c08d6998, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.171356
+      value: 33.99
       objectReference: {fileID: 0}
     - target: {fileID: 7997144200881355076, guid: e46fa8a4379aa1c469a60671c08d6998, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.7947903
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 7997144200881355076, guid: e46fa8a4379aa1c469a60671c08d6998, type: 3}
       propertyPath: m_LocalPosition.z

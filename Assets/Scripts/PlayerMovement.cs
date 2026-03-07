@@ -4,11 +4,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Transform groundedCastPoint;
 
     public Sound jumpSound;
+    public Sound landSound;
 
-    public Vector2 groundedAngle;
     public float acceleration;
     public float deceleration;
     public float maxSpeed;
@@ -18,17 +17,19 @@ public class PlayerMovement : MonoBehaviour
     bool grounded = false;
     float coyoteTimeCurrent = 0f;
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        //spawn landing particles
-
-        //play landing sound
-        if (grounded) AudioManager.Instance.PlaySound(jumpSound); 
-    }
-
     void Update()
     {
+        bool wasGrounded = grounded;
         grounded = IsGrounded();
+
+        if (!wasGrounded && grounded)
+        {
+            if (rb.linearVelocityY <= 0f)
+            {
+                AudioManager.Instance.PlaySound(landSound);
+            }
+        }
+
 
         if (!DialogueReader.Instance.playerLocked)
         {
