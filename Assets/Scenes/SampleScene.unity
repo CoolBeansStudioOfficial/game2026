@@ -1699,9 +1699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rb: {fileID: 622797840}
-  groundedCastPoint: {fileID: 0}
   jumpSound: {fileID: 11400000, guid: 217c635e45069f24bbc503152963b45e, type: 2}
-  groundedAngle: {x: 0, y: -1}
+  landSound: {fileID: 11400000, guid: c4686c3c99731934d96fdfa87b152d38, type: 2}
   acceleration: 100
   deceleration: 15
   maxSpeed: 6
