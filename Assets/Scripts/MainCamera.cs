@@ -5,7 +5,8 @@ public class MainCamera : MonoBehaviour
     public Transform target;
     public float followSpeed;
 
-    public Transform backgroundImage;
+    public Transform[] backgroundImages;
+    public Vector2[] offsets;
     public float parallaxMultiplier;
 
     // Update is called once per frame
@@ -19,7 +20,14 @@ public class MainCamera : MonoBehaviour
         transform.position = newPosition;
 
         //move background image
-        newPosition = new(transform.position.x * parallaxMultiplier, transform.position.y * parallaxMultiplier, backgroundImage.localPosition.z);
-        backgroundImage.localPosition = newPosition;
+        int i = 0;
+        foreach (Transform image in backgroundImages)
+        {
+            newPosition = new(transform.position.x * parallaxMultiplier * (i + 1) + offsets[i].x, transform.position.y * parallaxMultiplier * (i + 1) + offsets[i].y, image.localPosition.z);
+            image.localPosition = newPosition;
+
+            i++;
+        }
+        
     }
 }
