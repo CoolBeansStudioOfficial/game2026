@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public DialogueReader dialogueReader;
     public SkillTree skillTree;
     public GameObject skillTreeView;
+    public string skillTreeFirstOpenDialogue;
 
     public bool canOpenSkillTree = false;
     public bool playerLocked = false;
@@ -36,9 +37,18 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (canOpenSkillTree) skillTreeView.SetActive(!skillTreeView.activeSelf);
+            if (!canOpenSkillTree) return;
+                
+            skillTreeView.SetActive(!skillTreeView.activeSelf);
 
             playerLocked = skillTreeView.activeSelf;
+
+            if (!skillTree.openedBefore)
+            {
+                dialogueReader.ReadDialogue(skillTreeFirstOpenDialogue);
+                skillTree.openedBefore = true;
+                 
+            }
         }
     }
 }

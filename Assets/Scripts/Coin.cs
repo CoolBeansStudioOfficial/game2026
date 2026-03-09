@@ -14,9 +14,10 @@ public class Coin : MonoBehaviour
 
             AudioManager.Instance.PlaySound(collectSound);
             AudioManager.Instance.PlaySound(collectDialogue[randomChoice]);
-            
+
 
             //tell game coin was collected
+            UIManager.Instance.skillTree.coins++;
 
             //destroy coin
             Destroy(gameObject);

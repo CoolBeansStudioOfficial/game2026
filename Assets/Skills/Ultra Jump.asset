@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acff8d04e2ca4449a4c7b2fce7c34f8, type: 3}
   m_Name: Ultra Jump
   m_EditorClassIdentifier: Assembly-CSharp::Skill
-  description: Press Q while on the ground to perform an ultra high super jump.
-  coins: 5
+  description: 'Gain the ability to perform an ultra high super jump! \n\n +1% jump
+    height\n Cost: 8 coins'
+  coins: 8
