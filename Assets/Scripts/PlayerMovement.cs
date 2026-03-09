@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (!DialogueReader.Instance.playerLocked)
+        if (!UIManager.Instance.playerLocked)
         {
             if (Input.GetKey(KeyCode.A))
             {

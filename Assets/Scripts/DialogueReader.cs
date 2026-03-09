@@ -4,31 +4,12 @@ using UnityEngine;
 
 public class DialogueReader : MonoBehaviour
 {
-    private static DialogueReader _instance;
-    public static DialogueReader Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-        //singleton initialization
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     public GameObject panel;
     public TMP_Text text;
 
     public float timeBetweenChars;
     public int charsPerSound;
     public Sound dialogueSound;
-
-    public bool playerLocked = false;
 
     public void ReadDialogue(string dialogue, bool lockPlayer = false)
     {
@@ -39,7 +20,7 @@ public class DialogueReader : MonoBehaviour
     IEnumerator DisplayDialogue(string dialogue, bool lockPlayer = false)
     {
         panel.SetActive(true);
-        playerLocked = lockPlayer;
+        UIManager.Instance.playerLocked = lockPlayer;
 
         var chars = dialogue.ToCharArray();
 
@@ -64,7 +45,7 @@ public class DialogueReader : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         panel.SetActive(false);
-        playerLocked = false;
+        UIManager.Instance.playerLocked = false;
 
     }
 

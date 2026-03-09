@@ -6,7 +6,7 @@ public class Trigger : MonoBehaviour
     public GameObject toActivate;
     public Sound activationSound;
 
-    bool alreadyTriggered = false;
+    public bool alreadyTriggered = false;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
