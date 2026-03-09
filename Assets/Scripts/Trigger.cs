@@ -14,7 +14,7 @@ public class Trigger : MonoBehaviour
 
         if (collider.CompareTag("Player"))
         {
-            if (toActivate != null) toActivate.SetActive(true);
+            if (toActivate != null) toActivate.SetActive(!toActivate.activeSelf);
             if (activationSound != null) AudioManager.Instance.PlaySound(activationSound);
         }
 
@@ -24,6 +24,6 @@ public class Trigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (alreadyTriggered) return;
-        if (toActivate != null) toActivate.SetActive(false);
+        if (toActivate != null) toActivate.SetActive(!toActivate.activeSelf);
     }
 }
