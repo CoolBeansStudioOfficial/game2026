@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public TrailRenderer trail;
 
     public Sound jumpSound;
     public Sound ultraJumpSound;
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
             if (rb.linearVelocityY <= 0f)
             {
                 AudioManager.Instance.PlaySound(landSound);
+                trail.enabled = false;
             }
         }
 
@@ -69,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
                     else
                     {
                         AudioManager.Instance.PlaySound(ultraJumpSound);
+                        trail.enabled = true;
                     }
                     
                 }
