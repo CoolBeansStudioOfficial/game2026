@@ -9,10 +9,15 @@ public class BoxmanIcon : MonoBehaviour
 
     Vector2 baseSize;
 
-    void Start()
+    void OnEnable()
     {
         baseSize = transform.sizeDelta;
         StartCoroutine(Animation());
+    }
+
+    private void OnDisable()
+    {
+        transform.sizeDelta = baseSize;
     }
 
     IEnumerator Animation()
