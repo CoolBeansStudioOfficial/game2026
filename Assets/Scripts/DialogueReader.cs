@@ -32,7 +32,8 @@ public class DialogueReader : MonoBehaviour
 
             if (i % charsPerSound == 0) AudioManager.Instance.PlaySound(dialogueSound);
 
-            yield return new WaitForSeconds(timeBetweenChars);
+            if (chars[i] == '.' || chars[i] == '!' || chars[i] == '?') yield return new WaitForSeconds(timeBetweenChars * 5);
+            else yield return new WaitForSeconds(timeBetweenChars);
 
             //if player presses space, skip to end
             if (Input.GetKey(KeyCode.Space))
