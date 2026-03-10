@@ -36,7 +36,7 @@ public class SkillTree : MonoBehaviour
         {
             AudioManager.Instance.PlaySound(confirmSound);
 
-            GameObject.Find("Player").GetComponent<PlayerMovement>().jumpHeight += 0.2f;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().currentJumpHeight += 0.2f;
             coins -= selectedSkill.coins;
         }
         

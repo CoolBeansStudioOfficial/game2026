@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad54980b9f9a6847a28cfe552992729, type: 3}
   m_Name: Ultra Jump Hup
   m_EditorClassIdentifier: Assembly-CSharp::Sound
-  description: 
-  audioClip: {fileID: 0}
-  volume: 0
-  pitchRandomRange: 0
-  isSpatial: 1
+  description: huuuup
+  audioClip: {fileID: 8300000, guid: 80ac3d1c45c71894c85dde813f7848c1, type: 3}
+  volume: 1
+  pitchRandomRange: 0.1
+  isSpatial: 0

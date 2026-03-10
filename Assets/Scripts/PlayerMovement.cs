@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public Sound jumpSound;
+    public Sound ultraJumpSound;
     public Sound landSound;
 
     public float acceleration;
@@ -16,6 +17,12 @@ public class PlayerMovement : MonoBehaviour
 
     bool grounded = false;
     float coyoteTimeCurrent = 0f;
+    public float currentJumpHeight;
+
+    void Start()
+    {
+        currentJumpHeight = jumpHeight;
+    }
 
     void Update()
     {
@@ -53,9 +60,17 @@ public class PlayerMovement : MonoBehaviour
                 {
                     coyoteTimeCurrent = 0f;
                     grounded = false;
-                    rb.linearVelocityY = jumpHeight;
+                    rb.linearVelocityY = currentJumpHeight;
 
-                    AudioManager.Instance.PlaySound(jumpSound);
+                    if (currentJumpHeight <= jumpHeight)
+                    {
+                        AudioManager.Instance.PlaySound(jumpSound);
+                    }
+                    else
+                    {
+                        AudioManager.Instance.PlaySound(ultraJumpSound);
+                    }
+                    
                 }
             }
         }
