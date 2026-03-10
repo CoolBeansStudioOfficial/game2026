@@ -5,6 +5,7 @@ public class BoxmanIcon : MonoBehaviour
 {
     new public RectTransform transform;
     public float animationSpeed;
+    public Vector2 animationMultipliers;
 
     Vector2 baseSize;
 
@@ -18,30 +19,27 @@ public class BoxmanIcon : MonoBehaviour
     {
         while (true)
         {
-            while (transform.sizeDelta.x > baseSize.x * 0.95f)
+            float i = 0;
+            while (i < 1)
             {
-                print("skibidi rizz");
-                float speed = Time.deltaTime * animationSpeed;
+                transform.sizeDelta = Vector2.Lerp(baseSize, baseSize * animationMultipliers, i);
 
-                //shrink horizontally, grow vertically
-                transform.sizeDelta = new(transform.sizeDelta.x - speed, transform.sizeDelta.y + speed);
-
+                i += Time.deltaTime * animationSpeed;
                 yield return new WaitForEndOfFrame();
             }
 
-            while (transform.sizeDelta.x < baseSize.x)
+            transform.sizeDelta = baseSize * animationMultipliers;
+
+            i = 0;
+            while (i < 1)
             {
-                float speed = Time.deltaTime * animationSpeed;
+                transform.sizeDelta = Vector2.Lerp(baseSize * animationMultipliers, baseSize, i);
 
-                //shrink horizontally, grow vertically
-                Vector2 newSize = Vector2.MoveTowards(transform.sizeDelta, baseSize, speed);
-                transform.sizeDelta = newSize;
-
+                i += Time.deltaTime * animationSpeed;
                 yield return new WaitForEndOfFrame();
             }
-        }
-        
 
-        
+            transform.sizeDelta = baseSize;
+        }        
     }
 }
