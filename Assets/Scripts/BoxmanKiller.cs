@@ -28,6 +28,7 @@ public class BoxmanKiller : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            UIManager.Instance.canOpenSkillTree = false;
             RefreshPage();
         }
     }
